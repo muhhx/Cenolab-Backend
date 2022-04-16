@@ -1,7 +1,18 @@
-//Get home page projects
+const Project = require('../models/Project')
+
 const getHome = async (req, res) => {
-    console.log("Home")
-    res.json("Home page projects")
+    try {
+        const projects = await Project.find({homePage: true})
+        res.status(200).json({
+            success: true,
+            data: projects
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            data: error.message
+        })
+    }
 }
 
 module.exports = { getHome }

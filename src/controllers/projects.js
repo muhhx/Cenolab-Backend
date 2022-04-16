@@ -1,8 +1,18 @@
 const Project = require('../models/Project')
 
-//Get all projects
 const getProjects = async (req, res) => {
-    res.json("Get all projects")
+    try {
+        const projects = await Project.find()
+        res.status(200).json({
+            success: true,
+            data: projects
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            data: error.message
+        })
+    }
 }
 
 //Post new project -> O que falta: Talvez, fazer a funcionalidade de upload imagem e gerar o url (posso fazer isso no front com Firebase)
@@ -19,7 +29,7 @@ const addProject = async (req, res) => {
 
     try {
         const data = await newProject.save()
-        res.json({
+        res.status(200).json({
             success: true,
             data: data
         })
@@ -31,20 +41,69 @@ const addProject = async (req, res) => {
     }
 }
 
-//Get specific project :id - SE A ID NAO FOR ENCONTRADA
 const getProject = async (req, res) => {
-    console.log("Specific")
-    res.json("Get specific project")
+    try {
+        const { projectId } = req.params
+        const project = await Project.findById(projectId)
+        res.status(200).json({
+            success: true,
+            data: project
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            data: error.message
+        })
+    }
 }
 
-//Put specific project :id
 const updateProject = async (req, res) => {
-    res.json("Update specific project")
+    try {
+        const { projectId } = req.params
+        const data = await Project.findOneAndUpdate({_id: projectId}, req.body, {
+            new: true,
+            runValidators: true
+        })
+
+        if(!data) {
+            return res.status(404).json({
+                success: false,
+                data: `No data with Id: ${projectId}, 404`
+            })
+        }
+
+        res.status(200).json({
+            success: true,
+            data: data
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            data: error.message
+        })
+    }
 }
 
-//Delete specific project :id
 const deleteProject = async (req, res) => {
-    res.json("Delete specific project")
+    try {
+        const { projectId } = req.params
+        const data = await Project.findByIdAndDelete(projectId)
+        if(!data) {
+            return res.status(404).json({
+                success: false,
+                data: `No data with Id: ${projectId}, 404`
+            })
+        }
+        res.status(200).json({
+            success: true,
+            data: data
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            data: error.message
+        })
+    }
 }
 
 module.exports = {
