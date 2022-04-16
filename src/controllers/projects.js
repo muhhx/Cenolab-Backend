@@ -1,3 +1,5 @@
+const Project = require('../models/Project')
+
 //Get all projects
 const getProjects = async (req, res) => {
     res.json("Get all projects")
@@ -5,7 +7,26 @@ const getProjects = async (req, res) => {
 
 //Post new project
 const addProject = async (req, res) => {
-    res.json("Post new project")
+    const newProject = new Project({
+        name: req.body.name,
+        description: req.body.description,
+        category: req.body.category,
+        thumb: "randomUrl",
+        images: ["um"]
+    })
+
+    try {
+        const data = await newProject.save()
+        res.json({
+            success: true,
+            data: data
+        })
+    } catch (error) {
+        res.json({
+            success: false,
+            data: error.message
+        })
+    }
 }
 
 //Get specific project :id

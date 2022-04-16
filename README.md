@@ -1,11 +1,3 @@
-JSON Object
-
-{
-    name: "Project name",
-    category: "entreterimento",
-    homePage: true
-}
-
 if(homePage === true) {
     arr.push(currentProject) //A ordem que os projetos aparecerão na homePage será definida nessa array
 }
@@ -25,3 +17,10 @@ Na pagina de admin, fazer uma sessão para mostrar quais projetos estão sendo m
 //api/v1/projects/home - getHome                   GET (Pegar os projetos que aparecerão na home) -- db.filter(homePage === true)
 //api/v1/projects/category - getCategories               GET (Pega todos os projetos, separados em sua respectiva categoria) 
 //api/v1/projects/category/:categoryId - getCategory   GET (Pegar todos os projetos de determinada categoria) -- db.filter(category === categoryId) -- Mandar apenas 6 projetos no maximo por conta do front
+
+
+Entreterimento > 13
+Social > 4
+Formaturas > 0 (tem o texto de cada categoria)
+Coorporativo / Marcas > 5
+Arquiteura Comercial > 6
