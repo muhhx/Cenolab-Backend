@@ -7,14 +7,7 @@ const {
     deleteProject,
 } = require('../controllers/projects')
 
-router.get("/", getProjects)
-
-router.post("/", addProject)
-
-router.get("/:projectId", getProject)
-
-router.put("/:projectId", updateProject)
-
-router.delete("/:projectId", deleteProject)
+router.route("/").get(getProjects).post(addProject)
+router.route("/:projectId").get(getProject).put(updateProject).delete(deleteProject)
 
 module.exports = router
