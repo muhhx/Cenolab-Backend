@@ -8,6 +8,7 @@ const categoriesRoutes = require('./routes/categories')
 const projectsRoutes = require('./routes/projects')
 const homeRoutes = require('./routes/home')
 const connectDatabase = require('./db/connect')
+const notFound = require('./middleware/notFound')
 const port = process.env.PORT || 5000
 const mongodb = process.env.MONGO_URI
 
@@ -19,6 +20,7 @@ app.use(cors())
 app.use("/api/v1/categories", categoriesRoutes)
 app.use("/api/v1/projects", projectsRoutes)
 app.use("/api/v1/home", homeRoutes)
+app.use(notFound)
 
 //Connect to DB and Start server
 const start = async () => {
