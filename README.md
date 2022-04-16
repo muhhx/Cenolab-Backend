@@ -24,3 +24,15 @@ Social > 4
 Formaturas > 0 (tem o texto de cada categoria)
 Coorporativo / Marcas > 5
 Arquiteura Comercial > 6
+
+VOce nao vai poder substituir, deletar, adicionar imanges em uma array de imagens do banco de dados, porem voce pode substituir a thumbImage. Se voce quiser substituir uma imagem, deleta todo o projeto e cria um novo
+ENTAO, é recomendado você ja ter todas as imagens que voce quer usar, preparadas
+(porem voce pode atualizar nome, categoria, descrição, homePage, thumbImage)
+
+Quando voce cria, a thumb image vai ser automaticamente a primeira imagem da array, porem voce pode atualizar a thumb image depois
+
+//Criar Projeto
+- É impossível você criar um projeto:
+    - Sem, no mínimo, 1 imagem;
+    - Sem preencher todos os campos (name, description, category, images);
+    - Enviando a category errada

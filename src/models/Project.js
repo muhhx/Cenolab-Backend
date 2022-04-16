@@ -19,8 +19,7 @@ const ProjectSchema = mongoose.Schema({
         default: false
     },
     thumb: {
-        type: String,
-        required: [true, "Selecione uma thumb image"]
+        type: String
     },
     images: {
         type: [String],
