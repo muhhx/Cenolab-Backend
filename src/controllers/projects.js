@@ -45,6 +45,14 @@ const getProject = async (req, res) => {
     try {
         const { projectId } = req.params
         const project = await Project.findById(projectId)
+
+        if(project.length === 0) {
+            return res.status(404).json({
+                success: false,
+                data: `No project with Id: ${projectId}, 404`
+            })
+        }
+
         res.status(200).json({
             success: true,
             data: project

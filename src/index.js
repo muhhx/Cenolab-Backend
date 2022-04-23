@@ -7,8 +7,10 @@ require('dotenv/config')
 const categoriesRoutes = require('./routes/categories')
 const projectsRoutes = require('./routes/projects')
 const homeRoutes = require('./routes/home')
+
 const connectDatabase = require('./db/connect')
 const notFoundMiddlware = require('./middleware/notFoundMiddleware')
+
 const port = process.env.PORT || 5000
 const mongodb = process.env.MONGO_URI
 
