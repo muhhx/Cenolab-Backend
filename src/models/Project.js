@@ -11,7 +11,7 @@ const ProjectSchema = mongoose.Schema({
     },
     category: {
         type: "String",
-        enum: ["Entreterimento", "Social", "Formaturas", "Coorporativo e Marcas", "Arquitetura Comercial"],
+        enum: ["Entreterimento", "Social", "Formaturas", "Coorporativo", "Comercial"],
         required: [true, "Informe a categoria correta do projeto"]
     },
     homePage: {
