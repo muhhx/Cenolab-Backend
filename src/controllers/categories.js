@@ -3,19 +3,18 @@ const Project = require('../models/Project')
 
 const getCategory = async (req, res) => {
     try {
-        const { categoryId } = req.params
-        const data = await Project.find({category: categoryId})
-        const arraySliced = arraySlicer(6, data)
-        
-        if(arraySliced[0].length === 0) {
-            return res.status(200).json({
-                success: false,
-                data: null
-            })
+        const categories = ["Entreterimento", "Social", "Coorporativo", "Comercial", "Formaturas"]
+        let finalArray = {}
+
+        for(let i = 0; i < categories.length; i++) {
+            const data = await Project.find({category: categories[i]})
+            const arraySliced = arraySlicer(6, data)
+            finalArray[categories[i]] = arraySliced
         }
+
         res.status(200).json({
             success: true,
-            data: arraySliced
+            data: finalArray
         })
     } catch (error) {
         res.json({
