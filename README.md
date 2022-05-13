@@ -1,38 +1,81 @@
-//api/v1/projects/                       GET (Pegar todos os projetos do portfólio) -- db.filter()
-//api/v1/projects/                       POST (Adicionar projeto)
-//api/v1/projects/:projectId             GET (Pegar algum projeto em específico) -- db.filter(_id === projectId)
-//api/v1/projects/:projectId             PUT (Editar propriedades de um projeto especifico -- para aparecer na home, mudar nome, fotos, etc)
-//api/v1/projects/:projectId             DELETE (Deletar projeto específico)
-//api/v1/projects/home                   GET (Pegar os projetos que aparecerão na home) -- db.filter(homePage === true)
-//api/v1/projects/category               GET (Pega todos os projetos, separados em sua respectiva categoria) 
-//api/v1/projects/category/:categoryId   GET (Pegar todos os projetos de determinada categoria) -- db.filter(category === categoryId) -- Mandar apenas 6 projetos no maximo por conta do front
+<h1>CenoLAB (Client side)</h1>
+<a align="center" href="https://cenolab.com.br/">Clique aqui para acessar a API do projeto (Server side).</a>
+<div align="center">
 
-//Quantidade de projetos para cada categoria
-Entreterimento > 13
-Social > 4
-Formaturas > 0 (tem o texto de cada categoria)
-Coorporativo / Marcas > 5
-Arquiteura Comercial > 6
+[![Linkedin Badge](https://img.shields.io/badge/-Murilo%20Santos-231f20?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/giovannalinda)](https://www.linkedin.com/in/muhhx) 
+[![Gmail Badge](https://img.shields.io/badge/-muriloue@gmail.com-231f20?style=flat-square&logo=Gmail&logoColor=white&link=mailto:muriloue@gmail.com)](mailto:muriloue@gmail.com)
 
-//Regras para add projetos
-- Voce nao vai poder substituir, deletar, adicionar imanges em uma array de imagens do banco de dados, porem voce pode substituir a thumbImage. Se voce quiser substituir uma imagem, deleta todo o projeto e cria um novo
-- ENTAO, é recomendado você ja ter todas as imagens que voce quer usar, preparadas
-- (porem voce pode atualizar nome, categoria, descrição, homePage, thumbImage)
-- Quando voce cria, a thumb image vai ser automaticamente a primeira imagem da array, porem voce pode atualizar a thumb image depois
+</div>
+<p align="center">
+    <a href="#Sobre">Sobre</a> - 
+    <a href="#Preview">Preview</a> - 
+    <a href="#Funcionalidades">Funcionalidades</a> - 
+    <a href="#Tecnologias">Tecnologias</a> - 
+    <a href="#Instalar">Instalar</a>
+</p>
 
-//Criar Projeto
-- É impossível você criar um projeto:
-    - Sem, no mínimo, 1 imagem;
-    - Sem preencher todos os campos (name, description, category, images);
-    - Enviando a category errada
+## Sobre
+<a href="https://cenolab.com.br/">Clique aqui para acessar o site (cenolab.com.br).</a>
+<p>Site institucional para empresa de arquitetura/cenografia, usando Typescript, React.js, Node.js, MongoDB e Firebase. Página de administrador com autenticação e UI intuitiva para editar o portfólio.</p>
 
-//Pagina de admin
-- PÁGINA DE ADMIN
-    - Update homeProjects (selecionar apenas os que aparecerao na home + botao para confirmar mudanças -> Duas axios calls no front, uma mudando o currentObject pra false e a outra mudando o novo item para true)
-    - Lista de projetos (mostrar bonitinho as infos com thumb image + botao pra editar)
-        - PÁGINA PARA EDITAR PROJETO ESPECIFICO
-    - Add projeto
-        - PÁGINA PARA ADD PROJETO
+## Preview
 
 
-SE VOCE SO MANDAR O FIELD Q VC QUER FAZER O UPDATE, ELE SO VAI FAZER O UPDATE NAQUELE FIELD!!! N PRECISO MANDAR INFOS DESNECESSARIAS NO REQUEST!!!!!!!
+## Funcionalidades
+O que falta atualizar:
+- [ ] Redirecionar para redes sociais footer
+- [x] Autenticação (Firebase)
+    - [x] Página de login
+    - [ ] Dashboard
+        - [ ] Página de administrador com UI intuitiva
+        - [ ] Funcionalidade Adicionar/deletar item portfólio
+        - [x] Funcionalidade Controlar manutenção 
+        - [ ] Funcionalidade Controlar 2 itens do portfólio no front-end
+        - [x] Funcionalidae Logout
+- [ ] Página de Projetos
+- [ ] Página de Projeto
+- [x] Página 404
+- [ ] Página de Contato
+- [x] Página de Manutenção
+- [ ] Fazer formulário
+- [ ] Mudar Firebase para production e avisar no readme
+
+Como organizar os dados front end:
+- fAzer context api pegando todos os itens do portfolio
+- No mesmo context, verificar se o item possui initialPage = true. Caso sim, separar numa array de 2 items que serão consumidos na home
+- Para cada item, tambem verificar a categoria do item e jogar o item pra uma array com todos os itens da mesma categoria
+
+## Tecnologias
+- Vite
+- Typescript
+- React.js
+- Styled-components
+- React Hooks
+- Context API
+- React Router Dom v6.
+- Firebase
+- Node.js
+- MongoDB
+
+## Instalar
+<p>Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
+    <a href="https://git-scm.com">Git</a> e <a href="https://nodejs.org/en/">Node.js</a>. 
+    Além disto, é bom ter um editor para trabalhar com o código como 
+    <a href="https://code.visualstudio.com/">VSCode</a>.
+</p>
+
+```bash
+# Clone este repositório
+$ git clone <https://github.com/muhhx/Cenolab-Responsive-Website>
+
+# Acesse a pasta do projeto no terminal/cd
+$ cd Cenolab-Responsive-Website
+
+# Instale as dependências
+$ npm install
+
+# Execute a aplicação em modo de desenvolvimento
+$ npm run dev
+```
+
+<h4 align="center">Murilo Santos, 2022.✨™</h4>

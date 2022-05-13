@@ -15,11 +15,11 @@ const getProjects = async (req, res) => {
     }
 }
 
-//Post new project -> O que falta: Talvez, fazer a funcionalidade de upload imagem e gerar o url (posso fazer isso no front com Firebase)
 const addProject = async (req, res) => {
     const { name, description, category, images } = req.body
 
     const newProject = new Project({
+        originalName: name,
         name,
         description,
         category,
@@ -58,7 +58,7 @@ const getProject = async (req, res) => {
             data: project
         })
     } catch (error) {
-        res.json({
+        res.status(400).json({
             success: false,
             data: error.message
         })

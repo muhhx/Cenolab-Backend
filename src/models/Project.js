@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 
 const ProjectSchema = mongoose.Schema({
+    originalName: {
+        type: String
+    },
     name: {
         type: String,
         required: [true, "Informe o nome do projeto"]

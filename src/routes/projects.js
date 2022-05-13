@@ -6,8 +6,13 @@ const {
     updateProject,
     deleteProject,
 } = require('../controllers/projects')
+const authorizationMiddleware = require('../middleware/authorizationMiddleware')
 
-router.route("/").get(getProjects).post(addProject)
-router.route("/:projectId").get(getProject).put(updateProject).delete(deleteProject)
+
+router.get("/", getProjects)
+router.post("/", authorizationMiddleware, addProject)
+router.get("/:projectId", getProject)
+router.put("/:projectId",authorizationMiddleware, updateProject)
+router.delete("/:projectId", authorizationMiddleware, deleteProject)
 
 module.exports = router
