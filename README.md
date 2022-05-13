@@ -1,5 +1,4 @@
-<h1>CenoLAB Institutional, Full stack.</h1>
-<a align="center" href="https://cenolab.com.br/">Clique aqui para acessar a API do projeto (Server side).</a>
+<h1>CenoLAB Institutional | Backend</h1>
 <div align="center">
 
 [![Linkedin Badge](https://img.shields.io/badge/-Murilo%20Santos-231f20?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/giovannalinda)](https://www.linkedin.com/in/muhhx) 
@@ -16,9 +15,7 @@
 
 ## Sobre
 <p>Para acessar o <strong>Website</strong>, clique aqui: <a href="https://cenolab.com.br/">cenolab.com.br</a></p>
-
 <p>Para acessar o repositório <strong>Backend</strong>, clique aqui: <a href="https://github.com/muhhx/Cenolab-Backend">Cenolab API</a></p>
-
 <p>Para acessar o repositório <strong>Frontend</strong>, clique aqui: <a href="https://github.com/muhhx/Cenolab-Frontend">Cenolab Client</a></p>
 
 <p>Site institucional para empresa de arquitetura/cenografia, usando Typescript, React.js, Node.js, MongoDB e Firebase. Página de administrador com autenticação e UI intuitiva para editar o portfólio.</p>
