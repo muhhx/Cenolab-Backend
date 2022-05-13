@@ -22,28 +22,11 @@
 
 
 ## Funcionalidades
-O que falta atualizar:
-- [ ] Redirecionar para redes sociais footer
-- [x] Autenticação (Firebase)
-    - [x] Página de login
-    - [ ] Dashboard
-        - [ ] Página de administrador com UI intuitiva
-        - [ ] Funcionalidade Adicionar/deletar item portfólio
-        - [x] Funcionalidade Controlar manutenção 
-        - [ ] Funcionalidade Controlar 2 itens do portfólio no front-end
-        - [x] Funcionalidae Logout
-- [ ] Página de Projetos
-- [ ] Página de Projeto
-- [x] Página 404
-- [ ] Página de Contato
-- [x] Página de Manutenção
-- [ ] Fazer formulário
-- [ ] Mudar Firebase para production e avisar no readme
-
-Como organizar os dados front end:
-- fAzer context api pegando todos os itens do portfolio
-- No mesmo context, verificar se o item possui initialPage = true. Caso sim, separar numa array de 2 items que serão consumidos na home
-- Para cada item, tambem verificar a categoria do item e jogar o item pra uma array com todos os itens da mesma categoria
+- [x] JWT Auth with Node.js
+- [x] CRUD Operations (ADD, DELETE, EDIT PROJECTS) in the admin page
+- [x] Firebase Storage to store Images
+- [x] All pages responsive, including the admin page
+- [x] Email form functionality with NodeMailer
 
 ## Tecnologias
 - Vite
