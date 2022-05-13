@@ -15,9 +15,12 @@
 </p>
 
 ## Sobre
-<a href="https://cenolab.com.br/">Clique aqui para acessar o site real: CENOLAB.COM.BR</a>
-<a href="https://cenolab.com.br/">Clique aqui para acessar o repositório: BACKEND</a>
-<a href="https://cenolab.com.br/">Clique aqui para acessar o repositório: FRONTEND</a>
+<p>Para acessar o <strong>Website</strong>, clique aqui: <a href="https://cenolab.com.br/">cenolab.com.br</a></p>
+
+<p>Para acessar o repositório <strong>Backend</strong>, clique aqui: <a href="https://github.com/muhhx/Cenolab-Backend">Cenolab API</a></p>
+
+<p>Para acessar o repositório <strong>Frontend</strong>, clique aqui: <a href="https://github.com/muhhx/Cenolab-Frontend">Cenolab Client</a></p>
+
 <p>Site institucional para empresa de arquitetura/cenografia, usando Typescript, React.js, Node.js, MongoDB e Firebase. Página de administrador com autenticação e UI intuitiva para editar o portfólio.</p>
 
 ## Preview
